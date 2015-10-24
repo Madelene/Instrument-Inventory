@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20151024150024) do
 
   create_table "instruments", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
