@@ -17,38 +17,29 @@ class InstrumentsController < ApplicationController
   end
 
   def create
-    @instrument = Instrument.new(instrument_params)
+   @instrument = Instrument.new(instrument_params)
 
-    respond_to do |format|
       if @instrument.save
-        format.html { redirect_to @instrument, notice: 'Your Instrument was successfully created.'}
-        format.json { render :show, status: :created, location: @instrument }
-
+        redirect_to @instrument, notice: 'Your Instrument was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @instrument.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
+
 
   def update
-    respond_to do |format|
+
       if @instrument.update(instrument_params)
-        format.html { redirect_to @instrument, notice: 'Instrument was successfully updated. Great Job!' }
-        format.json { render :show, status: :ok, location: @instrument }
+        redirect_to @instrument, notice: 'Instrument was successfully updated. Great Job!'
       else
-        format.html { render :edit }
-        format.json { render json: @instrument.errors, status: :unprocessable_entity }
+          render :edit
       end
-    end
   end
+
 
   def destroy
     @instrument.destroy
-    respond_to do |format|
-      format.html { redirect_to instruments_url, notice: 'Your instrument was successfully destroyed.'}
-      format.json { head :no_content }
-    end
+      redirect_to instruments_url, notice: 'Your instrument was successfully destroyed.'
   end
 
   private
@@ -58,7 +49,7 @@ class InstrumentsController < ApplicationController
   end
 
   def instrument_params
-    params.require(:instrument).permit(:type)
+    params.require(:instrument).permit(:name, :kind)
   end
 end
 
