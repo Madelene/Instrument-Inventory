@@ -3,7 +3,7 @@ class InstrumentsController < ApplicationController
 
 
   def index
-    @instruments = Instrument.all.sort_by{|i| i.name}
+    @instruments = Instrument.order(:name)
   end
 
   def show

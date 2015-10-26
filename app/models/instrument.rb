@@ -1,3 +1,3 @@
 class Instrument < ActiveRecord::Base
-  has_many :students, :dependent => :destroy
+  has_many :instructors, :through => :students
 end
