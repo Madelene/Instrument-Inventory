@@ -1,4 +1,4 @@
 class Instructor < ActiveRecord::Base
-  belongs_to :instrument
-  has_many :students
+  has_many :proficiencies
+  has_many :instruments, :through => :proficiencies
 end
