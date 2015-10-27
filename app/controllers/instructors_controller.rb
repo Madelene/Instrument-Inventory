@@ -7,6 +7,7 @@ class InstructorsController < ApplicationController
 
   def index
     @instructors = Instructor.all.sort_by{|i| i.name}
+    @instructor = Instructor.new
   end
 
   def show
