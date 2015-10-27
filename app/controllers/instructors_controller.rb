@@ -1,6 +1,6 @@
 class InstructorsController < ApplicationController
 
-  http_basic_authenticate_with name: "maddie", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: "username", password: "password", except: [:index, :show]
 
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
 

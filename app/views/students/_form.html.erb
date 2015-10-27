@@ -20,7 +20,7 @@
     <br>
     <%= f.label :age %>
     <br>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, in: 1.0 .. 100%>
   </div>
   <div class="actions">
     <%= f.submit %>
