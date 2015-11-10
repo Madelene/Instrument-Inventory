@@ -5,3 +5,4 @@ Wyncode - Week 5 Project
 * We should have at least 2 models that use CRUD (Create, Read, Update, Delete)
 * Add user authentication (login/password)
 * Use associations between models
+* This is still a work in progress!
